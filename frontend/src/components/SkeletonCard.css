@@ -1,0 +1,30 @@
+/* ─── src/components/SkeletonCard.css ─────────────────────────────────────── */
+.skel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.skel-card__img {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.skel-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skel-card__meta { height: 12px; width: 40%; }
+.skel-card__title { height: 16px; width: 90%; }
+.skel-card__title--short { width: 65%; }
+.skel-card__footer { height: 12px; width: 30%; margin-top: 8px; }
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}

@@ -1,0 +1,33 @@
+/* ─── src/pages/Search.css ───────────────────────────────────────────────────── */
+.search-page { max-width: 1400px; margin: 0 auto; padding: 32px 24px 60px; }
+
+.search-header { margin-bottom: 28px; }
+
+.search-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.search-count { color: var(--muted); font-size: 14px; }
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.search-error {
+  text-align: center;
+  padding: 48px;
+  color: var(--accent2);
+  font-size: 15px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+}
+.empty-state span { font-size: 48px; display: block; margin-bottom: 16px; }
+.empty-state p { font-size: 15px; }

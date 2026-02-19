@@ -1,0 +1,122 @@
+/* ─── src/components/ArticleCard.css ────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  background: var(--card-hover);
+}
+
+/* ── Image ─────────────────────────────────────────────────────────────────── */
+.card__image-link { display: block; }
+.card__image-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .card__image { transform: scale(1.04); }
+
+.card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+}
+
+/* ── Body ──────────────────────────────────────────────────────────────────── */
+.card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.card__source {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.card__dot { color: var(--border); }
+.card__time { font-size: 11px; }
+
+.card__title {
+  font-size: 15px;
+  line-height: 1.45;
+  font-weight: 700;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.card__title:hover { color: var(--accent); }
+.card__title--lg { font-size: 20px; }
+
+.card__desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.card__author {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
+}
+
+.card__bookmark {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.card__bookmark:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.card__bookmark.saved {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(232,197,71,0.08);
+}
+
+/* ── Featured card ─────────────────────────────────────────────────────────── */
+.card--featured .card__image-wrap { aspect-ratio: 16/8; }
