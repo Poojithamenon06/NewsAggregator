@@ -1,0 +1,21 @@
+.profile-page { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.profile-header { display: flex; align-items: center; gap: 20px; padding: 28px 0 18px; }
+.ph-avatar { width: 60px; height: 60px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; font-weight: 700; font-family: var(--font-serif); flex-shrink: 0; }
+.ph-name { font-family: var(--font-serif); font-size: 28px; font-weight: 700; color: var(--ink); }
+.ph-email { font-size: 13px; color: var(--muted); font-family: var(--font-mono); margin-top: 3px; }
+.profile-rule { border: none; border-top: 2px solid var(--red); margin-bottom: 28px; }
+.profile-body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.profile-card h3 { font-family: var(--font-serif); font-size: 17px; margin-bottom: 20px; color: var(--ink); padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.pf-form { display: flex; flex-direction: column; gap: 16px; }
+.pf-field { display: flex; flex-direction: column; gap: 6px; }
+.pf-field label { font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--text2); }
+.pf-field input { background: var(--surface2); border: 1px solid var(--border2); border-radius: var(--radius-sm); padding: 11px 13px; font-size: 14px; color: var(--text); outline: none; transition: border-color .2s; font-family: var(--font-sans); }
+.pf-field input:focus { border-color: var(--red); box-shadow: 0 0 0 2px var(--red-glow); }
+.pf-field input:disabled { opacity: .5; cursor: not-allowed; }
+.pf-btn { padding: 12px; background: var(--red); color: #fff; border-radius: var(--radius-sm); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: opacity .2s; margin-top: 4px; }
+.pf-btn:hover:not(:disabled) { opacity: .85; }
+.pf-btn:disabled { opacity: .5; cursor: not-allowed; }
+.profile-logout { margin-top: 32px; padding: 12px 28px; border: 1px solid rgba(192,57,43,.4); color: var(--red-light); border-radius: var(--radius-sm); font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; transition: all .2s; }
+.profile-logout:hover { background: var(--red-glow); }
+@media (max-width: 600px) { .profile-body { grid-template-columns: 1fr; } }

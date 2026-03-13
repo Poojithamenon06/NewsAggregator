@@ -1,0 +1,68 @@
+/* ─── Home.css ─────────────────────────────────────────────────────────────── */
+.home-page { max-width: 1400px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ── Deck line ─────────────────────────────────────────────────────────────── */
+.home-deck {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0 10px; gap: 12px; flex-wrap: wrap;
+}
+.home-deck-left  { display: flex; align-items: center; gap: 8px; }
+.home-deck-right { display: flex; align-items: center; gap: 10px; }
+
+.deck-category { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.deck-sep      { color: var(--muted); }
+.deck-region   { font-size: 13px; color: var(--text2); font-weight: 500; }
+.deck-updated  { font-size: 11.5px; color: var(--muted); font-family: var(--font-mono); }
+.deck-live {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  color: var(--red-light); padding: 3px 10px; border-radius: 2px;
+  border: 1px solid rgba(192,57,43,.35); background: var(--red-glow);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+.home-rule { border: none; border-top: 2px solid var(--red); margin-bottom: 24px; }
+
+/* ── Layout ─────────────────────────────────────────────────────────────────── */
+.home-layout { display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: start; }
+.home-main   { display: flex; flex-direction: column; gap: 24px; }
+
+/* ── Hero ─────────────────────────────────────────────────────────────────── */
+.home-hero { width: 100%; }
+
+/* ── Secondary 2-col ─────────────────────────────────────────────────────── */
+.home-secondary { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* ── Section divider ─────────────────────────────────────────────────────── */
+.home-divider {
+  display: flex; align-items: center; gap: 14px;
+}
+.home-divider span {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap; padding-right: 14px;
+  border-right: 2px solid var(--red);
+}
+.home-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── Grid ─────────────────────────────────────────────────────────────────── */
+.home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+/* ── Load more ───────────────────────────────────────────────────────────── */
+.home-load-more {
+  display: block; width: 100%; padding: 14px;
+  border: 1px solid var(--border2); border-radius: var(--radius-sm);
+  font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text2); background: var(--surface);
+  transition: all .2s; text-align: center;
+}
+.home-load-more:hover { border-color: var(--red); color: var(--red-light); background: var(--red-glow); }
+
+.home-spinner { display: flex; justify-content: center; padding: 28px; }
+
+.home-empty { text-align: center; padding: 80px 20px; color: var(--muted); }
+.home-empty-title { font-family: var(--font-serif); font-size: 22px; margin-bottom: 8px; color: var(--text2); }
+
+/* ── Sidebar ──────────────────────────────────────────────────────────────── */
+.home-sidebar { position: sticky; top: 130px; }
+
+@media (max-width: 1100px) { .home-layout { grid-template-columns: 1fr; } .home-sidebar { display: none; } }
+@media (max-width: 700px)  { .home-secondary { grid-template-columns: 1fr; } }
+@media (max-width: 500px)  { .home-page { padding: 0 14px 48px; } }

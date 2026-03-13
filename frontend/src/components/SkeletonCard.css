@@ -1,0 +1,8 @@
+.skel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 24px 0; }
+.skel-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.skel-img  { height: 180px; border-radius: 0; }
+.skel-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.skel-meta { height: 12px; width: 40%; }
+.skel-line { height: 14px; }
+.skel-line--lg { height: 18px; width: 90%; }
+.skel-line--sm { height: 12px; width: 65%; }

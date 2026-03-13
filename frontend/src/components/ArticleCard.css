@@ -1,0 +1,100 @@
+/* ─── ArticleCard.css — Editorial Style ────────────────────────────────────── */
+
+/* ── Hero Card ────────────────────────────────────────────────────────────── */
+.card-hero {
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); background: var(--paper);
+  box-shadow: var(--shadow-card);
+}
+.card-hero__img-link { display: block; position: relative; }
+.card-hero__img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform .5s ease; }
+.card-hero:hover .card-hero__img { transform: scale(1.025); }
+.card-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.4) 55%, transparent 100%);
+}
+.card-hero__content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 28px 28px 24px;
+}
+.card-hero__meta { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.card-hero__badge { background: var(--red); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .1em; padding: 2px 8px; border-radius: 2px; font-family: var(--font-sans); }
+.card-hero__source { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.8); letter-spacing: .04em; text-transform: uppercase; }
+.card-hero__time   { font-size: 12px; color: rgba(255,255,255,.6); font-family: var(--font-mono); }
+.card-hero__dot    { color: rgba(255,255,255,.4); font-size: 10px; }
+.card-hero__title {
+  font-family: var(--font-serif); font-size: 26px; font-weight: 700;
+  color: #fff; line-height: 1.2; margin-bottom: 8px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.card-hero__desc { font-size: 14px; color: rgba(255,255,255,.75); line-height: 1.5; }
+
+.card-hero__save {
+  position: absolute; top: 14px; right: 14px;
+  font-size: 18px; color: rgba(255,255,255,.8); padding: 6px;
+  background: rgba(0,0,0,.4); border-radius: 4px;
+  transition: all .2s; backdrop-filter: blur(4px);
+}
+.card-hero__save:hover { background: rgba(192,57,43,.5); color: #fff; }
+.card-hero__save--on { color: var(--gold-light) !important; }
+
+/* ── Standard Card ────────────────────────────────────────────────────────── */
+.card {
+  background: var(--paper); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex; flex-direction: column;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+.card:hover {
+  border-color: var(--border2);
+  box-shadow: 0 6px 28px rgba(0,0,0,.5);
+  transform: translateY(-2px);
+}
+
+.card__img-link { display: block; overflow: hidden; }
+.card__img-wrap { overflow: hidden; aspect-ratio: 16/9; }
+.card__img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.card:hover .card__img { transform: scale(1.04); }
+
+.card__body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+
+.card__meta { display: flex; align-items: center; gap: 6px; }
+.card__source { font-size: 11px; font-weight: 700; color: var(--red-light); letter-spacing: .06em; text-transform: uppercase; font-family: var(--font-sans); }
+.card__dot    { color: var(--muted); font-size: 10px; }
+.card__time   { font-size: 11px; color: var(--muted); font-family: var(--font-mono); }
+
+.card__title {
+  font-family: var(--font-serif);
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); line-height: 1.3;
+  transition: color .2s;
+}
+.card:hover .card__title { color: var(--red-light); }
+
+.card__desc { font-size: 13px; color: var(--text2); line-height: 1.55; flex: 1; }
+
+.card__footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); }
+.card__read-btn { font-size: 12px; font-weight: 700; color: var(--red-light); letter-spacing: .04em; text-transform: uppercase; transition: opacity .2s; }
+.card__read-btn:hover { opacity: .75; }
+.card__save { font-size: 12px; color: var(--muted); transition: color .2s; font-family: var(--font-sans); font-weight: 500; }
+.card__save:hover { color: var(--gold); }
+.card__save--on { color: var(--gold) !important; }
+
+/* ── Compact Card (sidebar) ───────────────────────────────────────────────── */
+.card-compact {
+  display: flex; gap: 12px; padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background .12s;
+}
+.card-compact:last-child { border-bottom: none; }
+.card-compact:hover { background: none; }
+
+.card-compact__img-link { flex-shrink: 0; }
+.card-compact__img { width: 80px; height: 60px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+
+.card-compact__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.card-compact__source { font-size: 10px; font-weight: 700; color: var(--red-light); letter-spacing: .06em; text-transform: uppercase; }
+.card-compact__title { font-family: var(--font-serif); font-size: 13px; font-weight: 700; color: var(--text); line-height: 1.3; transition: color .15s; }
+.card-compact__title:hover { color: var(--red-light); }
+.card-compact__time { font-size: 11px; color: var(--muted); font-family: var(--font-mono); margin-top: auto; }

@@ -1,0 +1,8 @@
+.saved-page { max-width: 1400px; margin: 0 auto; padding: 0 24px 80px; }
+.saved-header { display: flex; align-items: baseline; gap: 14px; padding: 24px 0 12px; }
+.saved-title { font-family: var(--font-serif); font-size: 32px; font-weight: 700; color: var(--ink); }
+.saved-count { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.saved-rule { border: none; border-top: 2px solid var(--red); margin-bottom: 28px; }
+.saved-empty { text-align: center; padding: 80px 20px; color: var(--muted); }
+.saved-empty-title { font-family: var(--font-serif); font-size: 24px; color: var(--text2); margin-bottom: 10px; }
+.saved-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
