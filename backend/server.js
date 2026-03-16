@@ -1,19 +1,28 @@
 require('dotenv').config();
 console.log('API KEY LOADED:', process.env.GNEWS_API_KEY);
-const express  = require('express');
-const cors     = require('cors');
+const express = require('express');
+const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 
 const app = express();
 connectDB();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://newsaggregator.vercel.app',
+    process.env.CLIENT_URL,
+  ].filter(Boolean),
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 200 }));
 
-app.use('/api/auth',  require('./routes/auth'));
-app.use('/api/news',  require('./routes/news'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/news', require('./routes/news'));
 app.use('/api/saved', require('./routes/saved'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'OK', time: new Date() }));
