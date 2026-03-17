@@ -9,17 +9,18 @@ const app = express();
 app.set('trust proxy', 1);
 connectDB();
 
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'news-aggregator-poojithamenon06s-projects.vercel.app',
-    'https://newsaggregator.vercel.app',
-    process.env.CLIENT_URL,
-  ].filter(Boolean),
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: [
+//     'http://localhost:3000',
+//     'news-aggregator-poojithamenon06s-projects.vercel.app',
+//     'https://newsaggregator.vercel.app',
+//     process.env.CLIENT_URL,
+//   ].filter(Boolean),
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 200 }));
 
