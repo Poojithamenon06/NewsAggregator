@@ -12,6 +12,7 @@ connectDB();
 const corsOptions = {
   origin: [
     'http://localhost:3000',
+    'news-aggregator-poojithamenon06s-projects.vercel.app',
     'https://newsaggregator.vercel.app',
     process.env.CLIENT_URL,
   ].filter(Boolean),
